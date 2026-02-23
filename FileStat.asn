@@ -1,0 +1,23 @@
+FileStat DEFINITIONS ::= BEGIN
+
+    UnixTime ::= INTEGER
+
+    FileType ::= ENUMERATED {
+        unspecified(0),
+        regular(1),
+        directory(2),
+        symlink(3),
+        blockDevice(4),
+        charDevice(5),
+        fifo(6),
+        socket(7)
+    }
+
+    Dirent ::= SEQUENCE {
+        name UTF8String,
+        size INTEGER,
+        modified UnixTime,
+        fileType FileType
+    }
+
+END
