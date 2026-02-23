@@ -1,0 +1,42 @@
+cabal-version:      3.14
+name:               hs-fstat2asn1
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            Apache-2.0
+license-file:       LICENSE
+author:             yanagitani
+maintainer:         takanori.yanagitani@gmail.com
+-- copyright:
+category:           System
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall -Werror
+
+executable hs-fstat2asn1
+    import:           warnings
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:
+        base >= 4.17 && < 4.23,
+        hs-fstat2asn1,
+    hs-source-dirs:   app
+    default-language: GHC2021
+
+library
+    import:           warnings
+    exposed-modules:  FstatToDer
+    build-depends:
+        base >= 4.17 && < 4.23,
+        unix >= 2.1 && < 2.10,
+        filepath >= 1.4 && < 1.7,
+        asn1-types >= 0.3 && < 0.5,
+        asn1-encoding >= 0.9 && < 0.11.0,
+        bytestring >= 0.11 && < 0.13,
+        text >= 2.0 && < 2.2,
+    hs-source-dirs:   src
+    default-language: GHC2021
