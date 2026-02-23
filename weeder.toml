@@ -1,0 +1,5 @@
+root-modules = [
+    "Main", # app/Main.hs
+    "Spec"  # test/Spec.hs
+]
+type-class-roots = true
